@@ -32,4 +32,5 @@ jobs:
 
     - name: Lint with Ruff
       run: |
+        ls
         ruff .
