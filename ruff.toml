@@ -1,0 +1,17 @@
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflake
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade
+]
+
+ignore = [
+    "B904",  # check for raise statements in exception handlers that lack a from clause
+    "B905",  # zip() without an explicit strict= parameter
+]
+
+target-version = "py311"
+
+[pycodestyle]
+max-line-length = 120
