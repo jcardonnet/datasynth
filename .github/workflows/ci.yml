@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Linter
+name: CI
 
 # Controls when the workflow will run
 on:
@@ -39,6 +39,14 @@ jobs:
         ls
         ruff .
 
+  test:
+    needs: lint
+    runs-on: ${{ matrix.os }} 
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
